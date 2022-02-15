@@ -18,6 +18,15 @@ def compare_circuits(angles):
     # QHACK #
 
     # define a device and quantum functions/circuits here
+    dev = qml.device('default.qubit', wires=5)
+
+    def circuit1(params):
+        qml.RX(params[0], wires=0)
+        qml.RY(params[1], wires=0)
+        return qml.expval(qml.PauliZ(0))
+    def circuit2(params):
+        qml.RY(params[0], wires=0)
+        qml.Rx(params[1], wires=0)
 
     # QHACK #
 
